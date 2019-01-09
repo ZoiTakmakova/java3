@@ -1,0 +1,38 @@
+[
+  {
+    "firstname": "Ivan 0",
+    "lastname": "Ivanov 0",
+    "address": "address 0",
+    "homePhone": "111110",
+    "mobilePhone": "222220",
+    "workPhone": "333330",
+    "email_1": "0@mail.ru",
+    "email_2": "0@mail.ru",
+    "email_3": "0@mail.ru",
+    "group": "test 0"
+  },
+  {
+    "firstname": "Ivan 1",
+    "lastname": "Ivanov 1",
+    "address": "address 1",
+    "homePhone": "111111",
+    "mobilePhone": "222221",
+    "workPhone": "333331",
+    "email_1": "1@mail.ru",
+    "email_2": "1@mail.ru",
+    "email_3": "1@mail.ru",
+    "group": "test 1"
+  },
+  {
+    "firstname": "Ivan 2",
+    "lastname": "Ivanov 2",
+    "address": "address 2",
+    "homePhone": "111112",
+    "mobilePhone": "222222",
+    "workPhone": "333332",
+    "email_1": "2@mail.ru",
+    "email_2": "2@mail.ru",
+    "email_3": "2@mail.ru",
+    "group": "test 2"
+  }
+]

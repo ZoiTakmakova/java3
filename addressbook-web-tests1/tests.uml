@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="344.34375" y="0.0">ru.zt.addressbook.appmanager.GroupHelper</node>
+    <node x="348.0" y="382.0">ru.zt.addressbook.tests.GroupCreationTests</node>
+    <node x="0.34375" y="0.0">ru.zt.addressbook.appmanager.NavigationHelper</node>
+    <node x="172.34375" y="0.0">ru.zt.addressbook.appmanager.SessionHelper</node>
+    <node x="0.0" y="382.0">ru.zt.addressbook.tests.GroupDeletionTest</node>
+    <node x="120.5" y="112.0">ru.zt.addressbook.appmanager.ApplicationManager</node>
+    <node x="148.5" y="280.0">ru.zt.addressbook.tests.TestBase</node>
+    <node x="167.0" y="382.0">ru.zt.addressbook.tests.AddNewCreationTest</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ru.zt.addressbook.appmanager.ApplicationManager" target="ru.zt.addressbook.appmanager.GroupHelper">
+      <point x="47.625" y="-59.0" />
+      <point x="295.125" y="72.0" />
+      <point x="369.67708333333337" y="72.0" />
+      <point x="-50.66666666666666" y="26.0" />
+    </edge>
+    <edge source="ru.zt.addressbook.tests.AddNewCreationTest" target="ru.zt.addressbook.tests.TestBase">
+      <point x="-40.25" y="-15.0" />
+      <point x="207.25" y="362.0" />
+      <point x="231.0" y="362.0" />
+      <point x="-16.5" y="26.0" />
+    </edge>
+    <edge source="ru.zt.addressbook.tests.GroupCreationTests" target="ru.zt.addressbook.tests.TestBase">
+      <point x="-38.25" y="-15.0" />
+      <point x="386.25" y="362.0" />
+      <point x="297.0" y="362.0" />
+      <point x="49.5" y="26.0" />
+    </edge>
+    <edge source="ru.zt.addressbook.tests.GroupDeletionTest" target="ru.zt.addressbook.tests.TestBase">
+      <point x="36.75" y="-15.0" />
+      <point x="110.25" y="362.0" />
+      <point x="198.0" y="362.0" />
+      <point x="-49.5" y="26.0" />
+    </edge>
+    <edge source="ru.zt.addressbook.appmanager.ApplicationManager" target="ru.zt.addressbook.appmanager.SessionHelper">
+      <point x="15.875" y="-59.0" />
+      <point x="263.375" y="92.0" />
+      <point x="286.34375" y="92.0" />
+      <point x="38.0" y="26.0" />
+    </edge>
+    <edge source="ru.zt.addressbook.tests.TestBase" target="ru.zt.addressbook.appmanager.ApplicationManager">
+      <point x="-49.5" y="-26.0" />
+      <point x="198.0" y="255.0" />
+      <point x="184.0" y="255.0" />
+      <point x="-63.5" y="59.0" />
+    </edge>
+    <edge source="ru.zt.addressbook.appmanager.ApplicationManager" target="ru.zt.addressbook.appmanager.NavigationHelper">
+      <point x="-47.625" y="-59.0" />
+      <point x="199.875" y="72.0" />
+      <point x="127.01041666666666" y="72.0" />
+      <point x="50.66666666666666" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="312.5" y="271.5" />
+  <SelectedNodes>
+    <node>ru.zt.addressbook.appmanager.ApplicationManager</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

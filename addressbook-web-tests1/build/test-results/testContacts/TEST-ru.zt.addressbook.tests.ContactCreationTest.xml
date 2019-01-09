@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.zt.addressbook.tests.ContactCreationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2018-09-29T13:31:49" hostname="Пользователь-ПК" time="13.383">
+  <properties/>
+  <testcase name="contactCreationTest[0](ContactData{id='2147483647', firstname='Ivan 0', lastname='Ivanov 0'})" classname="ru.zt.addressbook.tests.ContactCreationTest" time="5.1"/>
+  <testcase name="contactCreationTest[1](ContactData{id='2147483647', firstname='Ivan 1', lastname='Ivanov 1'})" classname="ru.zt.addressbook.tests.ContactCreationTest" time="4.022"/>
+  <testcase name="contactCreationTest[2](ContactData{id='2147483647', firstname='Ivan 2', lastname='Ivanov 2'})" classname="ru.zt.addressbook.tests.ContactCreationTest" time="3.949"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
