@@ -16,6 +16,7 @@ public void start(String username, String email) {
 }
 
 public void finish(String cofirmationLink, String password) {
+  /*проходим по ссылке*/
   wd.get(cofirmationLink);
   type(By.name("password"), password);
   type(By.name("password_confirm"), password);

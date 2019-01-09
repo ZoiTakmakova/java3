@@ -22,8 +22,9 @@ private String browser;
 private RegistrationHelper registrationHelper;
 private FtpHelper ftp;
 private MailHelper mailHelper;
+  private JamesHelper jamesHelper;
 
-public ApplicationManager(String browser) {
+  public ApplicationManager(String browser) {
   this.browser = browser;
   properties = new Properties();
 }
@@ -38,7 +39,7 @@ public void stop() {
     wd.quit();
   }
 }
-
+/*метод инициализации HTTP клиента при каждом обращении*/
 public HttpSession newSession() {
 
   return new HttpSession(this);
@@ -83,5 +84,12 @@ public MailHelper mail(){
     mailHelper=new MailHelper(this);
   }
   return mailHelper;
+}
+
+public  JamesHelper james(){
+  if (jamesHelper==null){
+    jamesHelper=new JamesHelper(this);
+  }
+  return  jamesHelper;
 }
 }
