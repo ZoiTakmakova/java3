@@ -1,5 +1,6 @@
 package ru.zt.mantis.appmanager;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -55,7 +56,14 @@ public RegistrationHelper registration() {
   }
   return registrationHelper;
 }
-
+////////////////////////////////////////////
+  public RegistrationHelper loginOn() {
+    if (registrationHelper == null) {
+      registrationHelper = new RegistrationHelper(this);
+    }
+    return registrationHelper;
+  }
+/////////////////////////////////////////////
 public FtpHelper ftp() {
   if (ftp == null) {
     ftp = new FtpHelper(this);
@@ -84,5 +92,9 @@ public MailHelper mail(){
   }
   return mailHelper;
 }
+
+  public RegistrationHelper change() {
+    return registrationHelper;
+  }
 
 }

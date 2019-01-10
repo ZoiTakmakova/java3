@@ -11,9 +11,12 @@ public class LoginTests extends  TestBase{
 
   @Test
 public void testLogin() throws IOException {
-    HttpSession session = app.newSession();
-    assertTrue(session.login("administrator","root"));
-    assertTrue(session.isLoggedInAs("administrator"));
 
+    //создание новой сессии  HttpSession
+    HttpSession session = app.newSession();
+    //проверка того, что пользователь залогинился
+    assertTrue(session.login("administrator","root"));
+     //после входа на струнице появился нужный текст
+    assertTrue(session.isLoggedInAs("administrator"));
   }
 }

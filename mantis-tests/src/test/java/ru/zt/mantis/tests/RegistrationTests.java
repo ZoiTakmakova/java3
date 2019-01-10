@@ -14,9 +14,9 @@ import java.util.List;
 import static org.testng.Assert.assertTrue;
 
 public class RegistrationTests extends TestBase {
+
   /*Предусловие: Запуск почтового сервера Wiser*/
 @BeforeMethod
-
 public void startMailServer() {
   app.mail().start();
 }
@@ -30,6 +30,7 @@ public void testRegistration() throws IOException, MessagingException {
   String password = "password";
   /*добавление почте значения текущего времени*/
   String email = String.format("user%s@local.localdomain", now);
+  //
   app.registration().start(user, email);
   /*Встроенный почтовый сервер*/
   List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
