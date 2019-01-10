@@ -15,7 +15,7 @@ import static org.testng.Assert.assertTrue;
 
 public class RegistrationTests extends TestBase {
   /*Предусловие: Запуск почтового сервера Wiser*/
-//@BeforeMethod
+@BeforeMethod
 
 public void startMailServer() {
   app.mail().start();
@@ -30,12 +30,9 @@ public void testRegistration() throws IOException, MessagingException {
   String password = "password";
   /*добавление почте значения текущего времени*/
   String email = String.format("user%s@local.localdomain", now);
-  app.james().createUser(user,password);
   app.registration().start(user, email);
   /*Встроенный почтовый сервер*/
-  //List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
-  /*Внешний почтовый сервер*/
-  List<MailMessage> mailMessages = app.james().waitForMail(user,password,6000);
+  List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
   /*Помещение результата регулярного выражения в переменную cofirmationLink*/
   String cofirmationLink = findConfirmationLink(mailMessages, email);
   app.registration().finish(cofirmationLink, password);
@@ -55,7 +52,7 @@ private String findConfirmationLink(List<MailMessage> mailMessages, String email
   return regex.getText(mailMessage.text);
 }
   /*Постдусловие: Остановка почтового сервера Wiser*/
-//@AfterMethod(alwaysRun = true)
+@AfterMethod(alwaysRun = true)
 public void stopMailServer() {
   app.mail().stop();
 }
