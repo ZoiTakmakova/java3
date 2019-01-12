@@ -30,13 +30,13 @@ public void testRegistration() throws IOException, MessagingException {
   String password = "password";
   /*добавление почте значения текущего времени*/
   String email = String.format("user%s@local.localdomain", now);
-  //
+  //регистрация пользователя
   app.registration().start(user, email);
   /*Встроенный почтовый сервер*/
   List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
   /*Помещение результата регулярного выражения в переменную cofirmationLink*/
   String cofirmationLink = findConfirmationLink(mailMessages, email);
-  app.registration().finish(cofirmationLink, password);
+  app.registration().finish(cofirmationLink, password);//changePassword
   /*Проерка того, что пользователь залогинился*/
   assertTrue(app.newSession().login(user, password));
 }

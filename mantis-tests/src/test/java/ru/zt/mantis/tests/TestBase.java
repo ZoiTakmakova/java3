@@ -4,10 +4,16 @@ import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import ru.zt.mantis.appmanager.ApplicationManager;
+import ru.zt.mantis.model.UserData;
+import ru.zt.mantis.model.Users;
 
 
 import java.io.File;
 import java.io.IOException;
+import java.util.stream.Collectors;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TestBase {
 
@@ -27,4 +33,17 @@ public void tearDown() throws IOException {
   app.ftp().restore("config_inc.php.back", "config_inc.php");
   app.stop();
 }
+/*
+  public void verifyGroupListInUI() {
+    if (Boolean.getBoolean("verifyUI")) {
+      //список групп из БД
+      Users dbUsers = app.db().users();
+      //список групп из польз.интерфейса
+      Users uiUsers = app.user().all();
+      assertThat(uiUsers, equalTo(dbUsers.stream()
+              .map((g) -> new UserData().withId(g.getId()).withUsername(g.getEmail()))
+              .collect(Collectors.toSet())));
+    }
+  }
+  */
 }

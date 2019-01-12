@@ -12,11 +12,17 @@ public class DbConnectionTest {
 public void testDbConnextion() {
   Connection conn = null;
   try {
+    //вход в БД
     conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/addressbook?user=root&password=");
+    //извлечение информации из БД
     Statement st = conn.createStatement();
+    //Поместить результат запроса в переменную rs
     ResultSet rs = st.executeQuery("select group_id, group_name, group_header, group_footer from group_list");
+    //создание экземпляра коллекции
     Groups groups = new Groups();
+    //пока еще есть записи
     while (rs.next()) {
+      //
       groups.add(new GroupData().withId(rs.getInt("group_id")).withName(rs.getString("group_name"))
               .withHeader(rs.getString("group_header")).withFooter(rs.getString("group_footer")));
     }

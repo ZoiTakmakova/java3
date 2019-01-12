@@ -23,6 +23,9 @@ private String browser;
 private RegistrationHelper registrationHelper;
 private FtpHelper ftp;
 private MailHelper mailHelper;
+private NewPasswordHelper newPasswordHelper;
+private DbHelper dbHelper;
+
 
   public ApplicationManager(String browser) {
   this.browser = browser;
@@ -32,6 +35,7 @@ private MailHelper mailHelper;
 public void init() throws IOException {
   String target = System.getProperty("target", "local");
   properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
+  dbHelper = new DbHelper();
 }
 
 public void stop() {
@@ -50,14 +54,16 @@ public String getProperty(String key) {
   return properties.getProperty(key);
 }
 
-public RegistrationHelper registration() {
-  if (registrationHelper == null) {
-    registrationHelper = new RegistrationHelper(this);
+public NewPasswordHelper changePassword() {
+  if (newPasswordHelper == null) {
+    newPasswordHelper = new NewPasswordHelper(this);
   }
-  return registrationHelper;
+  return newPasswordHelper;
+
 }
+
 ////////////////////////////////////////////
-  public RegistrationHelper loginOn() {
+  public RegistrationHelper registration() {
     if (registrationHelper == null) {
       registrationHelper = new RegistrationHelper(this);
     }
@@ -92,9 +98,7 @@ public MailHelper mail(){
   }
   return mailHelper;
 }
-
-  public RegistrationHelper change() {
-    return registrationHelper;
+  public DbHelper db() {
+    return dbHelper;
   }
-
 }
