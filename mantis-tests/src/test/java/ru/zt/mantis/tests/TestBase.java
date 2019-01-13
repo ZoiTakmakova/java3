@@ -33,17 +33,5 @@ public void tearDown() throws IOException {
   app.ftp().restore("config_inc.php.back", "config_inc.php");
   app.stop();
 }
-/*
-  public void verifyGroupListInUI() {
-    if (Boolean.getBoolean("verifyUI")) {
-      //список групп из БД
-      Users dbUsers = app.db().users();
-      //список групп из польз.интерфейса
-      Users uiUsers = app.user().all();
-      assertThat(uiUsers, equalTo(dbUsers.stream()
-              .map((g) -> new UserData().withId(g.getId()).withUsername(g.getEmail()))
-              .collect(Collectors.toSet())));
-    }
-  }
-  */
+
 }
