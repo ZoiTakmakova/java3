@@ -1,0 +1,18 @@
+apply plugin: 'java'
+
+
+//Подключение удаленного репозитория
+repositories{
+    mavenCentral()
+}
+
+//Декларация зависимостей
+dependencies {
+    compile 'org.testng:testng:6.9.10'
+    compile 'com.google.code.gson:gson:2.6.1'
+    compile 'org.apache.httpcomponents:httpclient:4.5.1'
+   compile 'org.apache.httpcomponents:fluent-hc:4.5.1'
+
+
+
+}

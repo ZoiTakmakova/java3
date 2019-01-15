@@ -63,14 +63,13 @@ public NewPasswordHelper changePassword() {
 
 }
 
-////////////////////////////////////////////
   public RegistrationHelper registration() {
     if (registrationHelper == null) {
       registrationHelper = new RegistrationHelper(this);
     }
     return registrationHelper;
   }
-/////////////////////////////////////////////
+
 public FtpHelper ftp() {
   if (ftp == null) {
     ftp = new FtpHelper(this);

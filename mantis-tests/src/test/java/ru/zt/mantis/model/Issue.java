@@ -37,9 +37,21 @@ public class Issue {
         return this;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public Issue withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+
     private int id;
     private String summary;
     private String description;
     private Project project;
+    private String status;
+
+
 
 }
