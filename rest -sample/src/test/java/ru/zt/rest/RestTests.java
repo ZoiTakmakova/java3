@@ -18,11 +18,12 @@ import java.util.Set;
 import static org.testng.Assert.assertEquals;
 
 
-public class RestTests {
+public class RestTests extends TestBase{
 
     @Test
     //создание нового баг-репорта в баг-трекере Bugify
     public void testCreateIssue() throws IOException {
+        skipIfNotFixed(665);
     //получить старый список баг-репортов
         Set<Issue> oldIssues=getIssues();
     //создать новый баг-репорт
@@ -36,16 +37,16 @@ public class RestTests {
 
     }
 
-        private Set<Issue> getIssues() throws IOException {
-        //авторизоваться и получить список всех б-р.тов в формате json
-            String json = getExecutor().execute(Request.Get("http://bugify.stqa.ru/api/issues.json"))
+        public Set<Issue> getIssues() throws IOException {
+        //авторизоваться и получить список всех б-р.тов в формате
+            String json = getExecutor().execute(Request.Get("http://bugify.stqa.ru/api/issues.json?page=1&limit=50"))
                     .returnContent().asString();
             //анализируем строчку
             JsonElement parsed = new JsonParser().parse(json);
             JsonElement issues = parsed.getAsJsonObject().get("issues");
             return new Gson().fromJson(issues, new TypeToken<Set<Issue>>(){}.getType());
     }
-    private Executor getExecutor(){
+    public Executor getExecutor(){
         return Executor.newInstance().auth("288f44776e7bec4bf44fdfeb1e646490","");//имя пользователя,пароль пусто
     }
 
