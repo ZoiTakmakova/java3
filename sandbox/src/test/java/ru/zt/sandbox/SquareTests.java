@@ -28,7 +28,7 @@ public  void  testPoint1(){
   Assert.assertEquals(p2.distance(p1),5.0);
 }
 
-@Test
+@Test(enabled = false)
 //Тестовый метод testPoint2
 public  void  testPoint(){
   //Объект класса Point точка p1
