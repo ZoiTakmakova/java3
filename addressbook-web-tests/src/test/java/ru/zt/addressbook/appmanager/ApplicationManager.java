@@ -53,7 +53,7 @@ public void init() throws IOException {
   } else {
       DesiredCapabilities capabilities = new DesiredCapabilities();
       capabilities.setBrowserName(browser);
-      wd = new RemoteWebDriver(new URL(properties.getProperty("web.baseUrl")),capabilities);
+      wd = new RemoteWebDriver(new URL(properties.getProperty("selenium.server")),capabilities);
     }
 
 
