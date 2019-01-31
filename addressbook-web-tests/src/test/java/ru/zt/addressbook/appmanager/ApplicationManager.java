@@ -49,12 +49,13 @@ public void init() throws IOException {
       wd = new ChromeDriver();
     } else if (browser.equals(BrowserType.IE)) {
       wd = new InternetExplorerDriver();
-    } else {
+    }
+  } else {
       DesiredCapabilities capabilities = new DesiredCapabilities();
       capabilities.setBrowserName(browser);
       wd = new RemoteWebDriver(new URL(properties.getProperty("web.baseUrl")),capabilities);
     }
-  }
+
 
 
   wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
