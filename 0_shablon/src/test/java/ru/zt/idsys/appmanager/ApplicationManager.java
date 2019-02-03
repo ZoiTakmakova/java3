@@ -14,6 +14,7 @@ WebDriver wd;
 
 private SessionHelper sessionHelper;
 private NavigationHelper navigationHelper;
+private EsiaCentRegHelper esiaCentRegHelper;
 
 private String browser;
 
@@ -45,6 +46,11 @@ public void stop() {
 public NavigationHelper getNavigationHelper() {
   return navigationHelper;
 }
+
+public EsiaCentRegHelper getEsiaCentRegHelper(){
+    return esiaCentRegHelper;
+}
+
 
 
 }
